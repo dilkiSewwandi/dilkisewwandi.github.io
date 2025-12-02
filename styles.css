@@ -27,6 +27,7 @@ a {
 a:hover {
     color: var(--text-primary);
 }
+
 /* Navigation */
 nav {
     background: var(--bg);
@@ -143,8 +144,7 @@ section h2 {
     margin-bottom: 32px;
 }
 
-News Section
-.news-list {
+News Section .news-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -154,7 +154,7 @@ News Section
     display: grid;
     grid-template-columns: 100px 1fr;
     gap: 24px;
-    padding: 8px 0;
+    padding: 4px 0;
 }
 
 .news-date {
@@ -573,3 +573,12 @@ footer p {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* globe sear section
+.Globe-search-info {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+
+} */
