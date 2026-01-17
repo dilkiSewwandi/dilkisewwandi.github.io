@@ -18,7 +18,7 @@
         <li><a href="#news">News</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="uploads/Dilki_Sewwandi_CV.pdf" target="_blank">CV</a></li>
       </ul>
     </div>
@@ -47,7 +47,7 @@
         researchers across the world.
       </p>
       <p>
-        I’m passionate about HCI, digital safety, and designing technologies that empower people and support safer
+        I'm passionate about HCI, digital safety, and designing technologies that empower people and support safer
         digital spaces.
       </p>
       <div class="contact-links">
@@ -242,23 +242,43 @@
     </div>
   </section>
 
-  <!-- <section>
-    <script type="text/javascript" id="clustrmaps"
-      src="//clustrmaps.com/map_v2.js?d=JdZhZCiGNOswI-2HdUpkWnqr_ncMixU0G_J37HnFJtE&cl=ffffff&w=a"></script>
-  </section> -->
-
-  <!-- <section>
-    <div class="Globe-search-info">
-      <script type="text/javascript" id="clstr_globe"
-        src="//clustrmaps.com/globe.js?d=JdZhZCiGNOswI-2HdUpkWnqr_ncMixU0G_J37HnFJtE"></script>
-    </div>
-  </section> -->
-  <!-- Footer
-  <footer>
-    <p>© 2025 Dilki Sewwandi. All rights reserved.</p>
-  </footer> -->
+  <!-- Experience Section -->
+  <div id="experience"></div>
 
   <script src="script.js"></script>
+  <script>
+    fetch('experience.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        const conferences = doc.querySelector('#conferences');
+        const summerSchools = doc.querySelector('#summer-schools');
+        const competitions = doc.querySelector('#competitions');
+
+        const experienceContainer = document.getElementById('experience');
+
+        if (conferences) experienceContainer.appendChild(conferences);
+        if (summerSchools) experienceContainer.appendChild(summerSchools);
+        if (competitions) experienceContainer.appendChild(competitions);
+      })
+      .catch(error => {
+        console.error('Error loading experience content:', error);
+        document.getElementById('experience').innerHTML = `
+          <section style="text-align: center; padding: 4rem 2rem;">
+            <h2>Experience</h2>
+            <p>View my full experience including conferences, workshops, and competitions.</p>
+            <a href="experience.html" class="link-badge" style="font-size: 1.1rem; padding: 0.75rem 1.5rem;">View Full Experience →</a>
+          </section>
+        `;
+      });
+  </script>
+
+    <!-- Footer -->
+      <footer>
+        <p>© 2025 Dilki Sewwandi. All rights reserved.</p>
+      </footer>
 </body>
 
 </html>
